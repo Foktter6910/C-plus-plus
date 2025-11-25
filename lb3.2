@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int day;
+    cin >> day;
+    string eng, ua;
+
+    switch (day) {
+    case 1: eng = "Monday"; ua = "Понеділок"; break;
+    case 2: eng = "Tuesday"; ua = "Вівторок"; break;
+    case 3: eng = "Wednesday"; ua = "Середа"; break;
+    case 4: eng = "Thursday"; ua = "Четвер"; break;
+    case 5: eng = "Friday"; ua = "П'ятниця"; break;
+    case 6: eng = "Saturday"; ua = "Субота"; break;
+    case 7: eng = "Sunday"; ua = "Неділя"; break;
+    default: eng = "Invalid"; ua = "Невірний номер"; break;
+    }
+
+    cout << eng << " / " << ua << endl;
+    return 0;
+}
