@@ -1,0 +1,26 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double a, b, h, x, y;
+    cout << "Enter a, b, h: ";
+    cin >> a >> b >> h;
+
+    cout << "---------------------" << endl;
+    cout << ":   X   :    Y      :" << endl;
+    cout << "---------------------" << endl;
+
+    for (x = a; x <= b; x += h) {
+        if (x < 7 || fabs(x + 5) < 1e-8) { 
+            cout << ": " << setw(5) << x << " :   value does not exist :" << endl;
+            break; 
+        }
+        y = 8 + sqrt(x - 7) / (x + 5);
+        cout << fixed << setprecision(3);
+        cout << ": " << setw(5) << x << " : " << setw(10) << y << " :" << endl;
+    }
+    cout << "---------------------" << endl;
+    return 0;
+}
