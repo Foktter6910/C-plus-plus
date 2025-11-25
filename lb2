@@ -1,0 +1,10 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double a = 2, b = 12.11;
+    double y = 0.5 * (log(a) + log(b)) / (pow(3.0, 1.0 / 3.0) * cos(pow(a + b, 2) + exp(a) * (3.141592653589793 / 6)));
+    cout << y << endl;
+    return 0;
+}
