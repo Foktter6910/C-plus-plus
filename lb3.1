@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter a three-digit positive number N: ";
+    cin >> N;
+    if (N < 100 || N > 999) {
+        cout << "The number must be three-digit and positive.\n";
+    }
+
+    int count = 0;
+    int a = N / 100;       
+    int b = (N / 10) % 10;  
+    int c = N % 10;         
+    if (a > 3) count++;
+    if (b > 3) count++;
+    if (c > 3) count++;
+
+    cout << "The number of digits greater than 3: " << count << endl;
+
+    return 0;
+}
