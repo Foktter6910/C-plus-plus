@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int m = 12;
+    int a[m];
+    int i, j, temp;
+
+    cout << "Press " << m << " integers:\n";
+    for (i = 0; i < m; i++) {
+        cin >> a[i];
+    }
+
+      for (i = 0; i < m - 1; i++) {
+        for (j = 0; j < m - 1 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "In ascending order:\n";
+    for (i = 0; i < m; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+       for (i = 0; i < m - 1; i++) {
+        for (j = 0; j < m - 1 - i; j++) {
+            if (a[j] < a[j + 1]) {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "According to the inheritance:\n";
+    for (i = 0; i < m; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
