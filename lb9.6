@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the array size: ";
+    cin >> n;
+
+    int *a = new int[n];
+    int i;
+
+    cout << "Enter " << n << " numbers:\n";
+    for (i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int pos = -1;
+    for (i = 0; i < n; i++) {
+        if (a[i] == 0) {
+            pos = i;      
+            break;
+        }
+    }
+
+    if (pos == -1) {
+        cout << "The array does not contain any zero elements.\n";
+    } else {
+        cout << "The first zero element has a number (index): " << pos << endl;
+    }
+
+    delete[] a;
+    return 0;
+}
