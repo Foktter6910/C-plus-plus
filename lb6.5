@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter a natural number N: ";
+    cin >> N;
+
+    if (N <= 0) {
+        cout << "N must be a natural number (N > 0)\n";
+        return 0;
+    }
+
+    int count = 0;     
+
+    while (N > 0) {
+        int digit = N % 10;  
+        if (digit > 3) {
+            count++;
+        }
+        N /= 10;              
+}
+
+    cout << "Digits greater than 3: " << count << endl;
+
+    return 0;
+}
