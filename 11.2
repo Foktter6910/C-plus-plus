@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+struct Date {
+    int hours;
+    int minutes;
+};
+
+int toMinutes(const Date& t) {
+    return t.hours * 60 + t.minutes;
+}
+
+int main() {
+    Date startTime, endTime;
+
+    cout << "Enter event start time (hours and minutes): ";
+    cin >> startTime.hours >> startTime.minutes;
+
+    cout << "Enter event end time (hours and minutes): ";
+    cin >> endTime.hours >> endTime.minutes;
+
+    if (startTime.hours < 0 || startTime.hours > 24 ||
+        startTime.minutes < 0 || startTime.minutes > 60 ||
+        endTime.hours < 0 || endTime.hours > 24 ||
+        endTime.minutes < 0 || endTime.minutes > 60) {
+        cout << "Invalid time\n";
+        return 0;
+    }
+
+    int startMin = toMinutes(startTime);
+    int endMin = toMinutes(endTime);
+
+    int diff = endMin - startMin;
+
+    if (diff < 0) {
+        diff += 24 * 60;
+    }
+
+    Date duration;
+    duration.hours = diff / 60;
+    duration.minutes = diff % 60;
+
+    cout << duration.hours << " " << duration.minutes << endl;
+
+    return 0;
+}
