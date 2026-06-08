@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int size = 3;
+    int **matrix = new int*[size];
+    for (int i = 0; i < size; i++)
+        matrix[i] = new int[size];
+
+    int even = 0, odd = 0;
+
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++) {
+            matrix[i][j] = rand() % 100;
+            if (matrix[i][j] % 2 == 0) even++;
+            else odd++;
+        }
+
+    cout << "Matrix:" << endl;
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            cout.width(4);
+            cout << matrix[i][j];
+        }
+        cout << endl;
+    }
+
+    cout << "\nMain diagonal: ";
+    for (int i = 0; i < size; i++)
+        cout << matrix[i][i] << " ";
+
+    cout << "\nSecondary diagonal: ";
+    for (int i = 0; i < size; i++)
+        cout << matrix[i][size - 1 - i] << " ";
+
+    cout << "\n\nEven count: " << even << endl;
+    cout << "Odd count: " << odd << endl;
+
+    for (int i = 0; i < size; i++)
+        delete[] matrix[i];
+    delete[] matrix;
+
+    return 0;
+}
